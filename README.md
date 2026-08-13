@@ -1,90 +1,145 @@
-# two_project_august_pair-programming
-
-# 🍨 Açaí da Tia Lu & Co. - Cardápio Digital
-
-Uma aplicação desktop simples e intuitiva desenvolvida em **Python** utilizando a biblioteca **Tkinter**. O aplicativo funciona como um PDV (Ponto de Venda) digital para pedidos de açaí, permitindo selecionar produtos, calcular o total em tempo real, alternar temas visuais e exportar o comprovante do pedido no formato **JSON**.
 
 ---
 
-## 🚀 Funcionalidades
+# 🐍 Projetos Educacionais em Python - Finanças, História e Sistemas
 
-- **Categorias Organizadas:** Navegação por abas em estilo *Notebook* (Copos & Tigelas, Combos Especiais, Sucos & Vitaminas e Adicionais).
-- **Cálculo Automático:** Atualização dinâmica do valor total conforme os itens são adicionados ou removidos via Spinbox.
-- **Exportação para JSON:** Gera um ticket detalhado com data, hora, itens e valores.
-  - Salva automaticamente na pasta `ticket/` do projeto.
-  - Permite ao usuário escolher salvar uma cópia extra em outro diretório.
-  - Tenta abrir o ticket diretamente no **VS Code** via terminal.
-- **Alternância de Tema (Light/Dark Mode):** Suporte a Modo Claro e Modo Escuro com troca de paleta dinâmica para todos os componentes visuais.
-- **Rolagem Suave:** Suporte a rolagem com a roda do mouse (*Scrollwheel*) dentro do menu de produtos.
+Este repositório reúne quatro aplicações gráficas desenvolvidas em **Python** utilizando a biblioteca **Tkinter**. Os projetos foram elaborados com foco didático para alunos de programação, integrando conceitos de **programação procedural**, **educação financeira**, **história do Brasil** e **manipulação de dados com JSON**.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🎯 Objetivos Didáticos
 
-- **[Python 3.x](https://www.python.org/):** Linguagem base do projeto.
-- **[Tkinter](https://docs.python.org/3/library/tkinter.html):** Interface gráfica nativa.
-- **[JSON](https://docs.python.org/3/library/json.html):** Formatação para exportação dos dados dos pedidos.
-- **[Subprocess](https://docs.python.org/3/library/subprocess.html) & [OS](https://docs.python.org/3/library/os.html):** Manipulação de caminhos e execução de comandos do sistema.
+* **Lógica Procedural & Estado:** Estruturação de código procedural facilitando a assimilação inicial de funções, parâmetros, variáveis globais (`global`) e gerenciamento de estado.
+* **Interface Gráfica (GUI):** Construção de telas interativas com `tkinter` e componentes modernos (`ttk.Notebook`, `Canvas`, `Listbox`, `Spinbox`, alternância de temas claro/escuro).
+* **Tratamento de Exceções & Validação:** Uso de blocos `try/except` para validação de entradas do usuário e prevenção de saques ou compras sem saldo.
+* **Recursos Externos & Persistência:** Requisições HTTP (`requests`), manipulação de imagens (`Pillow`) e exportação/persistência de dados em arquivos `.json`.
 
 ---
 
-## 📂 Estrutura de Arquivos Gerada
+## 🚀 Projetos Incluídos
 
-Ao finalizar um pedido, o aplicativo cria uma pasta `ticket/` na raiz do projeto (caso não exista) e grava o arquivo com a seguinte estrutura:
+### 1. 💵 Simulador de Rendas (`projeto1_simulador_rendas.py`)
+
+Aplicação introdutória de fluxo de caixa para controle de saldo financeiro simples.
+
+* **Destaques:**
+* Controle e atualização dinâmica de saldo em tempo real.
+* Validação de entradas para evitar valores nulos ou saques sem saldo.
+* Uso de mensagens de aviso com `messagebox`.
+
+
+
+---
+
+### 2. 📊 Dashboard Financeiro - Padrão B3 (`projeto2_simulador_b3.py`)
+
+Um painel financeiro completo com identidade visual inspirada na B3, organizado em abas interativas.
+
+* **Destaques:**
+* Uso de `ttk.Notebook` para abas de **Conta Corrente**, **Criptoativos** e **Extrato**.
+* Simulação de compra de frações de Bitcoin (BTC).
+* Histórico de transações em tempo real utilizando `Listbox`.
+
+
+
+---
+
+### 3. 📜 Linha do Tempo: Eufrásia Teixeira Leite (`projeto3_eufrasia_teixeira.py`)
+
+Uma aplicação educativa sobre **Eufrásia Teixeira Leite** (1850–1930), a primeira investidora global do Brasil.
+
+* **Destaques:**
+* Download e exibição de imagem via requisição HTTP (`requests` e `PIL`/`Pillow`).
+* Tratamento de falhas de conexão para manter a aplicação funcional mesmo offline.
+* Botões interativos para exibição de acontecimentos históricos.
+
+
+
+---
+
+### 4. 🫐 Açai da Tia Lu & Co. — Cardápio Digital (`projeto4_cardapio_acai.py`)
+
+Sistema de pedidos para loja de açaí, atuando como um cardápio digital completo com carrinho e geração de comprovantes.
+
+* **Destaques:**
+* Navegação por categorias em abas e cartões de produtos dinâmicos com `Canvas` e barra de rolagem.
+* Alternância dinâmica entre **Modo Claro** e **Modo Escuro**.
+* Exportação de pedidos com data e hora para arquivos `.json` salvos na pasta `ticket/` e integração com VS Code.
+
+
+
+---
+
+## 📊 Comparação dos Projetos
+
+| Projeto | Principal Objetivo | Conceitos-Chave | Nível |
+| --- | --- | --- | --- |
+| **Projeto 1** | Simulador de Rendas | Variáveis globais, `messagebox`, validação simples | Básico |
+| **Projeto 2** | Dashboard B3 | `ttk.Notebook`, abas, `Listbox`, simulação financeira | Intermediário |
+| **Projeto 3** | História: Eufrásia | Requisições HTTP, `Pillow`, tratamento de exceções, dicionários | Intermediário |
+| **Projeto 4** | Cardápio Digital | Exportação JSON, `Canvas`, temas (Light/Dark), `datetime`, `filedialog` | Avançado |
+
+---
+
+## 🛠️ Pré-requisitos e Instalação
+
+Para executar os projetos, você precisará do **Python 3.10+** instalado em sua máquina.
+
+### 1. Instalar as dependências do projeto
+
+Abra o terminal ou prompt de comando e execute:
+
+```bash
+pip install requests pillow
+
+```
+
+ou
+
+```bash
+python -m pip install requests pillow
+
+```
+
+> **Nota:** O `tkinter` já vem instalado por padrão na maioria das instalações do Python para Windows/macOS. Caso esteja utilizando Linux (Ubuntu/Debian), instale-o via terminal:
+> `sudo apt-get install python3-tkinter`
+
+---
+
+## 💻 Como Executar as Aplicações
+
+Navegue até a pasta do projeto no seu terminal e rode o arquivo desejado:
+
+```bash
+# Executar o Simulador de Rendas
+python projeto1_simulador_rendas.py
+
+# Executar o Dashboard Financeiro B3
+python projeto2_simulador_b3.py
+
+# Executar a Aplicação do Eufrásia Teixeira Leite
+python projeto3_eufrasia_teixeira.py
+
+# Executar o Cardápio Digital Açai da Tia Lu
+python projeto4_cardapio_acai.py
+
+```
+
+---
+
+## 🗂️ Estrutura do Repositório
 
 ```text
-nome_do_projeto/
-│
-├── main.py
-├── README.md
-└── ticket/
-    └── ticket_YYYYMMDD_HHMMSS.json
+.
+├── projeto1_simulador_rendas.py   # Aplicação simples de depósitos e saques
+├── projeto2_simulador_b3.py       # Dashboard financeiro com abas e extrato (B3)
+├── projeto3_eufrasia_teixeira.py  # Aplicação educativa sobre Eufrásia Teixeira Leite
+├── projeto4_cardapio_acai.py      # Cardápio digital com suporte a temas e exportação JSON
+├── ticket/                        # Pasta gerada automaticamente para os comprovantes JSON
+└── README.md                      # Documentação dos projetos
 
 ```
 
 ---
 
-## 📋 Pré-requisitos
-
-Para executar o projeto, você precisa apenas do **Python 3** instalado na sua máquina, pois todas as bibliotecas utilitárias utilizadas (`tkinter`, `json`, `os`, `subprocess`, `datetime`) fazem parte da biblioteca padrão do Python.
-
-*(Opcional)* Se desejar que o arquivo abra automaticamente após a exportação, certifique-se de ter o [Visual Studio Code](https://code.visualstudio.com/) instalado com o comando `code` configurado no PATH do sistema.
-
----
-
-## 🖥️ Como Executar
-
-1. **Clone o repositório:**
-```bash
-git clone [https://github.com/seu-usuario/acai-da-tia-lu.git](https://github.com/seu-usuario/acai-da-tia-lu.git)
-
-```
-
-
-2. **Navegue até o diretório do projeto:**
-```bash
-cd acai-da-tia-lu
-
-```
-
-
-3. **Execute o arquivo principal:**
-```bash
-python main.py
-
-```
-
-
-
----
-
-## 🎨 Paleta de Cores e Temas
-
-O código possui gerenciamento centralizado de temas:
-
-* **Modo Claro:** Tons vibrantes com fundo roxo/amarelo.
-* **Modo Escuro:** Visual *Dark Mode* elegante com tons cinza-escuro e detalhes em âmbar/dourado.
-
-```
-
-```
+💙 *Projetos desenvolvidos para fins educacionais, capacitação profissional e prática de lógica de programação.*
