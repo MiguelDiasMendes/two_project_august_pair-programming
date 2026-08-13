@@ -166,7 +166,7 @@ CARDAPIO = {
         },
     ],
     "➕ Adicionais Extra": [
-            {
+        {
             "id": 401,
             "nome": "Porção Extra de Nutella",
             "preco": 6.00,
@@ -233,6 +233,15 @@ def finalizar_pedido_json():
             "Carrinho Vazio", "Selecione pelo menos um item para finalizar!"
         )
         return
+
+    # --- NOVO: Exibição do messagebox com o resumo do pedido ---
+    resumo_texto = "📋 RESUMO DO PEDIDO:\n\n"
+    for item in itens_pedido:
+        resumo_texto += f"• {item['quantidade']}x {item['item']} - R$ {item['subtotal']:.2f}\n"
+    resumo_texto += f"\nTotal: R$ {total_geral:.2f}"
+
+    messagebox.showinfo("Resumo do Pedido", resumo_texto)
+    # -----------------------------------------------------------
 
     dados_pedido = {
         "data_pedido": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
